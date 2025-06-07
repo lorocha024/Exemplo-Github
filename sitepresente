@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cartinha</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      overflow-y: auto;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .carrossel {
+      position: relative;
+      width: 300px;
+      height: 240px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slides img {
+      width: 300px;
+      height: 240px;
+      object-fit: contain; /* Alterado para mostrar imagem inteira sem corte */
+      border-radius: 8px;
+      flex-shrink: 0;
+      background-color: #f0f0f0; /* opcional, para fundo neutro onde houver espaço */
+    }
+
+    .seta {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .seta:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .prev {
+      left: 5px;
+    }
+
+    .next {
+      right: 5px;
+    }
+
+    .texto {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .texto h1 {
+      margin-bottom: 10px;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    .texto p {
+      text-align: justify;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .spotify {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .spotify img {
+      width: 200px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        max-width: 90%;
+        max-height: none;
+      }
+
+      .carrossel {
+        width: 240px;
+        height: 180px;
+      }
+
+      .slides img {
+        width: 240px;
+        height: 180px;
+        object-fit: contain; /* manter o contain também aqui */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <!-- Carrossel de fotos -->
+      <div class="carrossel">
+        <div class="slides" id="slides">
+          <img src="img1.jpg" alt="img1" />
+          <img src="img2.jpg" alt="img2" />
+          <img src="img3.jpg" alt="img3" />
+		  <img src="img4.jpg" alt="img4" />
+		  <img src="img5.jpg" alt="img5" />
+		  <img src="img6.jpg" alt="img6" />
+		  <img src="img7.jpg" alt="img7" />
+		  <img src="img8.jpg" alt="img8" />
+		  <img src="img9.jpg" alt="img9" />
+		  <img src="img10.jpg" alt="img10" />
+		  <img src="img11.jpg" alt="img11" />
+		  <img src="img12.jpg" alt="img12" />
+		  <img src="img13.jpg" alt="img13" />
+		  <img src="img14.jpg" alt="img14" />
+		  <img src="img15.jpg" alt="img15" />
+		  <img src="img16.jpg" alt="img16" />
+		  <img src="img17.jpg" alt="img17" />
+		  <img src="img18.jpg" alt="img18" />
+		  <img src="img19.jpg" alt="img29" />
+		  <img src="img20.jpg" alt="img20" />
+		  <img src="img21.jpg" alt="img21" />
+		  <img src="img22.jpg" alt="img22" />
+		  <img src="img23.jpg" alt="img23" />
+		  <img src="img24.jpg" alt="img24" />
+        </div>
+        <button class="seta prev" onclick="mudarSlide(-1)">❮</button>
+        <button class="seta next" onclick="mudarSlide(1)">❯</button>
+      </div>
+
+      <!-- Texto da cartinha -->
+      <div class="texto">
+        <h1>Feliz Aniversário 🎉</h1>
+        <p>
+          Nem sei por onde começar... São 5 anos de amizade, mas é como se você estivesse comigo a vida inteira. Eu simplesmente não consigo imaginar minha vida sem você...
+          <br><br>
+          A gente já viveu tanta coisa junto, e eu amo compartilhar todos os meus melhores momentos com você. Seu jeitinho de ser torna tudo melhor.
+          Eu sei que nossa amizade foi plano de Deus, e sou grata por tudo que Ele tem feito em nós e através de nós.
+          <br><br>
+          Amo você e te desejo as melhores coisas. Que Deus continue te abençoando e usando sua vida. Você é luz, e é muito importante pra mim.
+        </p>
+      </div>
+
+      <!-- Código do Spotify -->
+      <div class="spotify">
+        <a href="https://open.spotify.com/track/5kqIPrATaCc2LqxVWzQGbk" target="_blank">
+          <img src="spotify-code.jpeg" alt="Spotify Bruno Mars - Count on Me" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.getElementById("slides");
+    const imagens = slides.children;
+
+    function mudarSlide(direcao) {
+      slideIndex = (slideIndex + direcao + imagens.length) % imagens.length;
+      slides.style.transform = `translateX(-${slideIndex * imagens[0].offsetWidth}px)`;
+    }
+  </script>
+</body>
+</html>
